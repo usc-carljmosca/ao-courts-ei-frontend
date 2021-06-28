@@ -21,7 +21,6 @@ const Layout = ({ children }) => {
         siteMetadata {
           title
           navigation {
-            title
             items {
               text
               link
@@ -48,7 +47,7 @@ const Layout = ({ children }) => {
       <Header siteTitle={title}>
         <Nav {...{ navigation, secondaryLinks }} />
       </Header>
-        {children}
+      {children}
       <Footer />
     </>
   );

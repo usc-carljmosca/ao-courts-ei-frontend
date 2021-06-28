@@ -1,31 +1,18 @@
 module.exports = {
   siteMetadata: {
     author: 'Foo',
-    title: `Agency Name`,
+    title: `CM-ECF system name`,
     description: `Agency Name (EAC) Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     Aenean et sapien a leo auctor scelerisque quis nec magna. Sed dictum ante a risus vehicula facilisis.`,
     navigation: [
       {
-        items: [{ text: 'Home', link: '/' }],
+        items: [{ text: 'Filing', link: '#' }],
       },
       {
-        items: [{ text: 'Blog', link: '/blog' }],
+        items: [{ text: 'Reports', link: '#' }],
       },
       {
-        items: [{ text: 'Document', link: '/document' }],
-      },
-      {
-        items: [
-          { text: 'Document with sidenav', link: '/document-with-sidenav' },
-        ],
-      },
-      {
-        title: 'Document submenu',
-        items: [
-          { text: 'Navigation link', link: '/' },
-          { text: 'Navigation link', link: '/' },
-          { text: 'Navigation link', link: '/' },
-        ],
+        items: [{ text: 'Utilities', link: '#' }],
       },
     ],
     secondaryLinks: [
@@ -35,29 +22,28 @@ module.exports = {
 
     /**
      * Search.gov configuration
-     * 
+     *
      * 1. Create an account with Search.gov https://search.usa.gov/signup
      * 2. Add a new site.
      * 3. Add your site/affiliate name here.
      */
     searchgov: {
-      
       // You should not change this.
       endpoint: 'https://search.usa.gov',
-      
+
       // replace this with your search.gov account
       affiliate: 'federalist-uswds-example',
-      
+
       // replace with your access key
       access_key: 'xX1gtb2RcnLbIYkHAcB6IaTRr4ZfN-p16ofcyUebeko=',
-      
+
       // this renders the results within the page instead of sending to user to search.gov
-      inline: true, 
+      inline: true,
     },
 
     /**
      * Digital Analytics Program (DAP) configuration
-     * 
+     *
      * USAID   - Agency for International Development
      * USDA    - Department of Agriculture
      * DOC     - Department of Commerce
@@ -88,7 +74,6 @@ module.exports = {
      */
     dap: {
       // agency: 'your-agency',
-
       // Optional
       // subagency: 'your-subagency',
     },
