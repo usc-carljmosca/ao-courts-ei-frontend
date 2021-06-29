@@ -16,9 +16,11 @@ const AddParties = ({ courtCase, dispatch }) => {
       <PartiesList parties={courtCase.parties} />
 
       <h4>Add Party</h4>
-      <form className="usa-form-group" onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <AddPartiesFields />
-        <input type="submit" className="usa-button" value="Add Party" />
+        <div className="usa-form-group">
+          <input type="submit" className="usa-button" value="Add Party" />
+        </div>
       </form>
     </>
   );

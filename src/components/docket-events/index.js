@@ -1,11 +1,10 @@
 import React from 'react';
 
 const DocketEvents = ({ courtCase, dispatch }) => {
-  const { events } = courtCase;
   return (
     <>
       <h4>All events</h4>
-      <DocketTable events={events} />
+      <DocketTable events={courtCase.events} />
       <AddEventForm dispatch={dispatch} />
     </>
   );
@@ -30,7 +29,10 @@ const DocketTable = ({ events }) => {
         </thead>
         <tbody>
           {events.map((event) => (
-            <DocketEventTableRow event={event} />
+            <DocketEventTableRow
+              event={event}
+              key={event.date.month + event.date.day + event.date.year}
+            />
           ))}
         </tbody>
       </table>
@@ -50,11 +52,31 @@ const DocketEventTableRow = ({ event }) => {
   );
 };
 
-const AddEventForm = () => {
+const AddEventForm = ({ dispatch }) => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const data = new FormData(e.target);
+    const eventType = data.get('event_type');
+    const description = data.get('event_details');
+    const month = data.get('event_date_1');
+    const day = data.get('event_date_2');
+    const year = data.get('event_date_3');
+
+    dispatch({
+      type: 'ADD_EVENT',
+      event: {
+        type: eventType,
+        description: description,
+        date: { day, month, year },
+      },
+    });
+  };
+
   return (
     <>
       <h4>New Event</h4>
-      <form className="usa-form">
+      <form className="usa-form" onSubmit={handleSubmit}>
         <label htmlFor="event_type" className="usa-label"></label>
         <select
           name="event_type"
@@ -82,6 +104,7 @@ const AddEventForm = () => {
             name="file-input-single"
           />
         </div>
+        <input type="submit" value="Add Event" className="usa-button" />
       </form>
     </>
   );
