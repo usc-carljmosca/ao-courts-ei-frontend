@@ -6,7 +6,7 @@ const DocketEvents = ({ courtCase, dispatch }) => {
     <>
       <h4>All events</h4>
       <DocketTable events={events} />
-      <AddEventForm />
+      <AddEventForm dispatch={dispatch} />
     </>
   );
 };
@@ -14,7 +14,7 @@ const DocketEvents = ({ courtCase, dispatch }) => {
 const DocketTable = ({ events }) => {
   return (
     <div className="usa-table-container">
-      <table class="usa-table">
+      <table className="usa-table">
         <thead>
           <tr>
             <th data-sortable scope="col" role="columnheader">
@@ -54,7 +54,7 @@ const AddEventForm = () => {
   return (
     <>
       <h4>New Event</h4>
-      <form class="usa-form">
+      <form className="usa-form">
         <label htmlFor="event_type" className="usa-label"></label>
         <select
           name="event_type"
@@ -71,13 +71,13 @@ const AddEventForm = () => {
           id="event_details"
           className="usa-textarea"
         ></textarea>
-        <div class="usa-form-group">
-          <label class="usa-label" for="file-input-single">
+        <div className="usa-form-group">
+          <label className="usa-label" htmlFor="file-input-single">
             Attach file
           </label>
           <input
             id="file-input-single"
-            class="usa-file-input"
+            className="usa-file-input"
             type="file"
             name="file-input-single"
           />
@@ -89,50 +89,50 @@ const AddEventForm = () => {
 
 const DocketEventDate = ({ month, day, year }) => {
   return (
-    <div class="usa-memorable-date">
-      <div class="usa-form-group usa-form-group--month">
-        <label class="usa-label" for="event_date_1">
+    <div className="usa-memorable-date">
+      <div className="usa-form-group usa-form-group--month">
+        <label className="usa-label" htmlFor="event_date_1">
           Month
         </label>
         <input
-          class="usa-input usa-input--inline"
+          className="usa-input usa-input--inline"
           id="event_date_1"
           name="event_date_1"
           type="text"
-          maxlength="2"
+          maxLength="2"
           pattern="[0-9]*"
-          inputmode="numeric"
+          inputMode="numeric"
           value={month}
         />
       </div>
-      <div class="usa-form-group usa-form-group--day">
-        <label class="usa-label" for="event_date_2">
+      <div className="usa-form-group usa-form-group--day">
+        <label className="usa-label" htmlFor="event_date_2">
           Day
         </label>
         <input
-          class="usa-input usa-input--inline"
+          className="usa-input usa-input--inline"
           id="event_date_2"
           name="event_date_2"
           type="text"
-          maxlength="2"
+          maxLength="2"
           pattern="[0-9]*"
-          inputmode="numeric"
+          inputMode="numeric"
           value={day}
         />
       </div>
-      <div class="usa-form-group usa-form-group--year">
-        <label class="usa-label" for="event_date_3">
+      <div className="usa-form-group usa-form-group--year">
+        <label className="usa-label" htmlFor="event_date_3">
           Year
         </label>
         <input
-          class="usa-input usa-input--inline"
+          className="usa-input usa-input--inline"
           id="event_date_3"
           name="event_date_3"
           type="text"
-          minlength="4"
-          maxlength="4"
+          minLength="4"
+          maxLength="4"
           pattern="[0-9]*"
-          inputmode="numeric"
+          inputMode="numeric"
           value={year}
         />
       </div>
