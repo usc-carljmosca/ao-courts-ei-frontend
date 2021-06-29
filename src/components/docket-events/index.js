@@ -1,6 +1,7 @@
 import React from 'react';
 
-const DocketEvents = ({ events }) => {
+const DocketEvents = ({ courtCase, dispatch }) => {
+  const { events } = courtCase;
   return (
     <>
       <h4>All events</h4>
@@ -40,7 +41,9 @@ const DocketTable = ({ events }) => {
 const DocketEventTableRow = ({ event }) => {
   return (
     <tr>
-      <td>{event.date}</td>
+      <td>
+        {event.date.month}/{event.date.day}/{event.date.year}
+      </td>
       <td>{event.description}</td>
       <td>{event.reference}</td>
     </tr>
@@ -84,7 +87,7 @@ const AddEventForm = () => {
   );
 };
 
-const DocketEventDate = () => {
+const DocketEventDate = ({ month, day, year }) => {
   return (
     <div class="usa-memorable-date">
       <div class="usa-form-group usa-form-group--month">
@@ -99,7 +102,7 @@ const DocketEventDate = () => {
           maxlength="2"
           pattern="[0-9]*"
           inputmode="numeric"
-          value=""
+          value={month}
         />
       </div>
       <div class="usa-form-group usa-form-group--day">
@@ -114,7 +117,7 @@ const DocketEventDate = () => {
           maxlength="2"
           pattern="[0-9]*"
           inputmode="numeric"
-          value=""
+          value={day}
         />
       </div>
       <div class="usa-form-group usa-form-group--year">
@@ -130,7 +133,7 @@ const DocketEventDate = () => {
           maxlength="4"
           pattern="[0-9]*"
           inputmode="numeric"
-          value=""
+          value={year}
         />
       </div>
     </div>
