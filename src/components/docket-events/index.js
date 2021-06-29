@@ -62,29 +62,45 @@ const AddEventForm = ({ dispatch }) => {
     const month = data.get('event_date_1');
     const day = data.get('event_date_2');
     const year = data.get('event_date_3');
+    const reference = data.get('file_reference');
 
     dispatch({
       type: 'ADD_EVENT',
       event: {
         type: eventType,
-        description: description,
+        description,
         date: { day, month, year },
+        reference,
       },
     });
   };
+
+  const eventTypes = [
+    'Motion Filed',
+    'Appearance of Counsel Entered',
+    'Notice of Electronic Filing',
+    'Notice of Appeal Filed',
+    'Hearing Scheduled',
+    'Order',
+    'Information',
+  ];
 
   return (
     <>
       <h4>New Event</h4>
       <form className="usa-form" onSubmit={handleSubmit}>
         <label htmlFor="event_type" className="usa-label"></label>
-        <select
-          name="event_type"
-          id="event_type"
-          className="usa-select"
-        ></select>
+        <select name="event_type" id="event_type" className="usa-select">
+          <option>- Select an event type-</option>
+          {eventTypes.map((t) => (
+            <option value={t} key={t}>
+              {t}
+            </option>
+          ))}
+        </select>
 
         <DocketEventDate />
+
         <label htmlFor="event_details" className="usa-label">
           Event Details
         </label>
@@ -93,6 +109,7 @@ const AddEventForm = ({ dispatch }) => {
           id="event_details"
           className="usa-textarea"
         ></textarea>
+
         <div className="usa-form-group">
           <label className="usa-label" htmlFor="file-input-single">
             Attach file
@@ -104,7 +121,20 @@ const AddEventForm = ({ dispatch }) => {
             name="file-input-single"
           />
         </div>
-        <input type="submit" value="Add Event" className="usa-button" />
+
+        <div className="usa-form-group">
+          <label htmlFor="file_reference" className="usa-label">
+            Page reference
+          </label>
+          <input type="text" className="usa-input" name="file_reference" />
+        </div>
+
+        <input
+          type="submit"
+          value="Add Event"
+          className="usa-button"
+          name="file_reference"
+        />
       </form>
     </>
   );

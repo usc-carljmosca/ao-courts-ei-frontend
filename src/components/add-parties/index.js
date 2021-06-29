@@ -52,6 +52,7 @@ const AddPartiesFields = () => {
         id="party-designation"
         name="party-designation"
       >
+        <option>- Select a designation for the party -</option>
         {partyTypes.map((type) => (
           <option value={type.toLocaleLowerCase()} key={type}>
             {type}
