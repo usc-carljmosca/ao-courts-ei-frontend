@@ -1,9 +1,10 @@
 import React from 'react';
+import { navigate } from 'gatsby';
 
 const DocketEvents = ({ courtCase, dispatch }) => {
   return (
     <>
-      <h4>All events</h4>
+      <h4 id="all_events">All events</h4>
       <DocketTable events={courtCase.events} />
       <AddEventForm dispatch={dispatch} />
     </>
@@ -73,6 +74,8 @@ const AddEventForm = ({ dispatch }) => {
         reference,
       },
     });
+
+    navigate('#all_events');
   };
 
   const eventTypes = [

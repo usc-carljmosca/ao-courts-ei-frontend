@@ -5,9 +5,21 @@ import SEO from '../components/seo';
 
 const initialState = {
   caseNumber: '21-12345',
-  caption: 'Ray Bradbury v. Charles Bradbury',
-  parties: [],
-  events: [],
+  caption: 'United States v. Timothy Carpenter',
+  parties: [
+    { partyName: 'United States', partyDesignation: 'Government' },
+    { partyName: 'Timothy Carpenter', partyDesignation: 'Defendant' },
+  ],
+  events: [
+    {
+      date: {
+        month: '09',
+        day: '26',
+        year: '2016',
+      },
+      description: 'Notice of Appeal filed',
+    },
+  ],
 };
 
 const docketReducer = (state, action) => {
