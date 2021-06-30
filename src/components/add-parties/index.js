@@ -11,18 +11,20 @@ const AddParties = ({ courtCase, dispatch }) => {
   };
 
   return (
-    <>
+    <section className="add-parties">
       <h4>Parties</h4>
       <PartiesList parties={courtCase.parties} />
 
-      <h4>Add Party</h4>
       <form onSubmit={handleSubmit}>
-        <AddPartiesFields />
-        <div className="usa-form-group">
-          <input type="submit" className="usa-button" value="Add Party" />
-        </div>
+        <fieldset className="usa-fieldset">
+          <legend className="usa-legend usa-legend--large">Add Parties</legend>
+          <AddPartiesFields />
+          <div className="usa-form-group">
+            <input type="submit" className="usa-button" value="Add Party" />
+          </div>
+        </fieldset>
       </form>
-    </>
+    </section>
   );
 };
 

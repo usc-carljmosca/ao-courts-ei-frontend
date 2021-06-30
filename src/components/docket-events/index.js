@@ -1,55 +1,17 @@
 import React from 'react';
 import { navigate } from 'gatsby';
+import DocketTable from '../docket-table';
 
-const DocketEvents = ({ courtCase, dispatch }) => {
+const DocketEvents = ({ courtCase, dispatch, isRecordOnAppeal }) => {
   return (
-    <>
+    <section>
       <h4 id="all_events">All events</h4>
-      <DocketTable events={courtCase.events} />
+      <DocketTable
+        events={courtCase.events}
+        isRecordOnAppeal={isRecordOnAppeal}
+      />
       <AddEventForm dispatch={dispatch} />
-    </>
-  );
-};
-
-const DocketTable = ({ events }) => {
-  return (
-    <div className="usa-table-container">
-      <table className="usa-table">
-        <thead>
-          <tr>
-            <th data-sortable scope="col" role="columnheader">
-              Date
-            </th>
-            <th data-sortable scope="col" role="columnheader">
-              Description
-            </th>
-            <th data-sortable scope="col" role="columnheader">
-              Reference
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          {events.map((event) => (
-            <DocketEventTableRow
-              event={event}
-              key={event.date.month + event.date.day + event.date.year}
-            />
-          ))}
-        </tbody>
-      </table>
-    </div>
-  );
-};
-
-const DocketEventTableRow = ({ event }) => {
-  return (
-    <tr>
-      <td>
-        {event.date.month}/{event.date.day}/{event.date.year}
-      </td>
-      <td>{event.description}</td>
-      <td>{event.reference}</td>
-    </tr>
+    </section>
   );
 };
 
@@ -89,57 +51,61 @@ const AddEventForm = ({ dispatch }) => {
   ];
 
   return (
-    <>
-      <h4>New Event</h4>
+    <section>
       <form className="usa-form" onSubmit={handleSubmit}>
-        <label htmlFor="event_type" className="usa-label"></label>
-        <select name="event_type" id="event_type" className="usa-select">
-          <option>- Select an event type-</option>
-          {eventTypes.map((t) => (
-            <option value={t} key={t}>
-              {t}
-            </option>
-          ))}
-        </select>
-
-        <DocketEventDate />
-
-        <label htmlFor="event_details" className="usa-label">
-          Event Details
-        </label>
-        <textarea
-          name="event_details"
-          id="event_details"
-          className="usa-textarea"
-        ></textarea>
-
-        <div className="usa-form-group">
-          <label className="usa-label" htmlFor="file-input-single">
-            Attach file
+        <fieldset className="usa-fieldset">
+          <legend className="usa-legend usa-legend--large">New Event</legend>
+          <label htmlFor="event_type" className="usa-label">
+            Event type
           </label>
+          <select name="event_type" id="event_type" className="usa-select">
+            <option>- Select an event type-</option>
+            {eventTypes.map((t) => (
+              <option value={t} key={t}>
+                {t}
+              </option>
+            ))}
+          </select>
+
+          <DocketEventDate />
+
+          <label htmlFor="event_details" className="usa-label">
+            Event Details
+          </label>
+          <textarea
+            name="event_details"
+            id="event_details"
+            className="usa-textarea"
+          ></textarea>
+
+          <div className="usa-form-group">
+            <label className="usa-label" htmlFor="file-input-single">
+              Attach file
+            </label>
+            <input
+              id="file-input-single"
+              className="usa-file-input"
+              type="file"
+              name="file-input-single"
+            />
+          </div>
+
+          <div className="usa-form-group">
+            <label htmlFor="file_reference" className="usa-label">
+              Page reference
+            </label>
+            <input type="text" className="usa-input" name="file_reference" />
+          </div>
+
           <input
-            id="file-input-single"
-            className="usa-file-input"
-            type="file"
-            name="file-input-single"
+            type="submit"
+            value="Add Event"
+            className="usa-button usa-button--outline"
+            name="file_reference"
           />
-        </div>
-
-        <div className="usa-form-group">
-          <label htmlFor="file_reference" className="usa-label">
-            Page reference
-          </label>
-          <input type="text" className="usa-input" name="file_reference" />
-        </div>
-
-        <input
-          type="submit"
-          value="Add Event"
-          className="usa-button"
-          name="file_reference"
-        />
+        </fieldset>
       </form>
-    </>
+    </section>
   );
 };
 
