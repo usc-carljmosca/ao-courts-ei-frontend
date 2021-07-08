@@ -1,4 +1,5 @@
 import React from 'react';
+import Icon from '../icon';
 
 const DocketTable = ({ events, isRecordOnAppeal }) => {
   return (
@@ -32,12 +33,15 @@ const DocketTable = ({ events, isRecordOnAppeal }) => {
   );
 };
 
-const DocketEventTableRow = ({ event, isRecordOnAppeal }) => {
+const DocketEventTableRow = ({ event, isRecordOnAppeal, isSealed }) => {
   return (
     <tr>
       {isRecordOnAppeal ? (
         <td>
           <input type="checkbox" className="usa-checkbox" />
+          <button className="usa-button usa-button--unstyled seal-case">
+            <Icon iconId="lock" />
+          </button>
         </td>
       ) : (
         ''
