@@ -133,6 +133,7 @@ module.exports = {
           '@uswds': path.resolve(__dirname, 'node_modules/uswds/dist'),
           '@components': path.resolve(__dirname, 'src/components'),
         },
+        extensions: ['js'],
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

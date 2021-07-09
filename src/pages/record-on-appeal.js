@@ -1,8 +1,8 @@
 import React, { useReducer } from 'react';
 
-import DocketDetails from '../components/docket-details';
-import Layout from '../components/layout';
-import SEO from '../components/seo';
+import DocketDetails from '@components/docket-details';
+import Layout from '@components/layout';
+import SEO from '@components/seo';
 
 const initialState = {
   caseNumber: '21-12345',
