@@ -1,6 +1,6 @@
 import React from 'react';
 import { navigate } from 'gatsby';
-import DocketTable from '../docket-table';
+import DocketTable from '@components/docket-table';
 
 const DocketEvents = ({ courtCase, dispatch, isRecordOnAppeal }) => {
   return (
@@ -10,7 +10,7 @@ const DocketEvents = ({ courtCase, dispatch, isRecordOnAppeal }) => {
         events={courtCase.events}
         isRecordOnAppeal={isRecordOnAppeal}
       />
-      <AddEventForm dispatch={dispatch} />
+      {isRecordOnAppeal ? '' : <AddEventForm dispatch={dispatch} />}
     </section>
   );
 };
