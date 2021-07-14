@@ -5,7 +5,8 @@ import DocketTable from '@components/docket-table';
 const DocketEvents = ({ courtCase, dispatch, isRecordOnAppeal }) => {
   return (
     <section>
-      <h4 id="all_events">All events</h4>
+      <h4 id="all_events">Compile Record on Appeal</h4>
+      <p>Select docket entries to include in the Record on Appeal</p>
       <DocketTable
         events={courtCase.events}
         isRecordOnAppeal={isRecordOnAppeal}

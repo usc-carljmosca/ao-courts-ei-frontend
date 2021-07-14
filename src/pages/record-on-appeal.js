@@ -41,11 +41,13 @@ const DocketEntry = () => {
     <Layout>
       <SEO title="Record On Appeal" />
 
-      <DocketDetails
-        courtCase={state}
-        dispatch={dispatch}
-        isRecordOnAppeal={true}
-      />
+      <ol className="usa-process-list">
+        <DocketDetails
+          courtCase={state}
+          dispatch={dispatch}
+          isRecordOnAppeal={true}
+        />
+      </ol>
     </Layout>
   );
 };

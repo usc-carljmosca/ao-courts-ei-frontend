@@ -61,6 +61,7 @@ const RecordDestination = () => {
 
   return (
     <div className="usa-form-group">
+      <h3>Select Panel to receive record</h3>
       {judges.map((j) => (
         <JudgeCheckbox name={j} key={j} />
       ))}

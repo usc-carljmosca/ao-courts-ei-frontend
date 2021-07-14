@@ -1,15 +1,14 @@
 import React from 'react';
-import Icon from '../icon';
 import DocketEventTableRow from '@components/docket-table-event-row';
 
-const DocketTable = ({ events, isRecordOnAppeal }) => {
+const RecordTable = ({ events, isRecordOnAppeal }) => {
   return (
     <>
       <div className="usa-table-container" id="docket_table">
         <table className="usa-table">
           <thead>
             <tr>
-              {isRecordOnAppeal ? <th>Include in Record on Appeal</th> : ''}
+              <th>Include in Record on Appeal</th>
               <th data-sortable scope="col" role="columnheader">
                 Date
               </th>
@@ -36,4 +35,4 @@ const DocketTable = ({ events, isRecordOnAppeal }) => {
   );
 };
 
-export default DocketTable;
+export default RecordTable;
