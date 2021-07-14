@@ -1,6 +1,8 @@
 import React from 'react';
 import { navigate } from 'gatsby';
 import DocketTable from '@components/docket-table';
+import { useDispatch } from 'react-redux';
+import { addEvent } from '../../store/docket/docket.slice';
 
 const DocketEvents = ({ courtCase, dispatch, isRecordOnAppeal }) => {
   return (
@@ -16,7 +18,9 @@ const DocketEvents = ({ courtCase, dispatch, isRecordOnAppeal }) => {
   );
 };
 
-const AddEventForm = ({ dispatch }) => {
+const AddEventForm = () => {
+  const dispatch = useDispatch();
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -28,15 +32,16 @@ const AddEventForm = ({ dispatch }) => {
     const year = data.get('event_date_3');
     const reference = data.get('file_reference');
 
-    dispatch({
-      type: 'ADD_EVENT',
-      event: {
-        type: eventType,
-        description,
-        date: { day, month, year },
-        reference,
-      },
-    });
+    dispatch(
+      addEvent({
+        event: {
+          type: eventType,
+          description,
+          date: { day, month, year },
+          reference,
+        },
+      })
+    );
 
     navigate('#all_events');
   };

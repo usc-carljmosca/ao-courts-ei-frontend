@@ -2,13 +2,14 @@ import React from 'react';
 import AddParties from '../add-parties';
 import DocketEvents from '../docket-events';
 import { Link } from 'gatsby';
+import { useSelector } from 'react-redux';
 
 const DocketDetails = ({ courtCase, dispatch, isRecordOnAppeal }) => {
-  const { caseNumber, caption } = courtCase;
+  const { number, caption } = useSelector((state) => state.docket);
 
   return (
     <div className="grid-container">
-      <h3>Docket {caseNumber}</h3>
+      <h3>Docket {number}</h3>
       <h2>{caption}</h2>
       {isRecordOnAppeal ? (
         ''
