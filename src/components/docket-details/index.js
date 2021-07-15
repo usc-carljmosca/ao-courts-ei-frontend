@@ -1,31 +1,23 @@
 import React from 'react';
-import AddParties from '../add-parties';
-import DocketEvents from '../docket-events';
+import AddParties from '@components/add-parties';
+import DocketEvents from '@components/docket-events';
 import { Link } from 'gatsby';
 import { useSelector } from 'react-redux';
 
-const DocketDetails = ({ courtCase, dispatch, isRecordOnAppeal }) => {
+const DocketDetails = ({ isRecordOnAppeal }) => {
   const { number, caption } = useSelector((state) => state.docket);
 
   return (
     <div className="grid-container">
       <h3>Docket {number}</h3>
       <h2>{caption}</h2>
-      {isRecordOnAppeal ? (
-        ''
-      ) : (
-        <AddParties courtCase={courtCase} dispatch={dispatch} />
-      )}
-      <DocketEvents
-        courtCase={courtCase}
-        dispatch={dispatch}
-        isRecordOnAppeal={isRecordOnAppeal}
-      />
+      {isRecordOnAppeal ? '' : <AddParties />}
+      <DocketEvents isRecordOnAppeal={isRecordOnAppeal} />
       {isRecordOnAppeal ? (
         <>
           <RecordDestination />
           <button
-            class="usa-button usa-button--secondary transmit-record"
+            className="usa-button usa-button--secondary transmit-record"
             onClick={() => alert('transmitted')}
           >
             Transmit Record

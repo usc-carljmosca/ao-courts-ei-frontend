@@ -132,6 +132,7 @@ module.exports = {
         alias: {
           '@uswds': path.resolve(__dirname, 'node_modules/uswds/dist'),
           '@components': path.resolve(__dirname, 'src/components'),
+          '@store': path.resolve(__dirname, 'src/store'),
         },
         extensions: ['js'],
       },

@@ -1,8 +1,12 @@
 import React from 'react';
-import Icon from '../icon';
 import DocketEventTableRow from '@components/docket-table-event-row';
+import { useSelector } from 'react-redux';
 
-const DocketTable = ({ events, isRecordOnAppeal }) => {
+const DocketTable = ({ isRecordOnAppeal }) => {
+  const { events } = useSelector((state) => state.docket);
+
+  if (typeof events === 'undefined' || events.legnth === 0) return '';
+
   return (
     <>
       <div className="usa-table-container" id="docket_table">

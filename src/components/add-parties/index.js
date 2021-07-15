@@ -1,19 +1,25 @@
 import React from 'react';
-import sprite from '../../../node_modules/uswds/dist/img/sprite.svg';
+import { useDispatch, useSelector } from 'react-redux';
+import { partyAdded } from '@store/docket/docket.slice';
+import PartiesList from '@components/parties-list';
 
-const AddParties = ({ courtCase, dispatch }) => {
+const AddParties = () => {
+  const dispatch = useDispatch();
+  const { parties } = useSelector((state) => state.docket);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const data = new FormData(e.target);
     const partyName = data.get('party');
     const partyDesignation = data.get('party-designation');
-    dispatch({ type: 'ADD_PARTY', party: { partyName, partyDesignation } });
+    dispatch(partyAdded({ party: { partyName, partyDesignation } }));
   };
 
   return (
     <section className="add-parties">
       <h4>Parties</h4>
-      <PartiesList parties={courtCase.parties} />
+
+      {parties && parties.length > 0 ? <PartiesList parties={parties} /> : ''}
 
       <form onSubmit={handleSubmit}>
         <fieldset className="usa-fieldset">
@@ -62,28 +68,6 @@ const AddPartiesFields = () => {
         ))}
       </select>
     </div>
-  );
-};
-
-const PartiesList = ({ parties }) => {
-  return (
-    <ul className="usa-list">
-      {parties.map((p) => (
-        <Party
-          partyName={p.partyName}
-          partyDesignation={p.partyDesignation}
-          key={p.partyName + p.partyDesignation}
-        />
-      ))}
-    </ul>
-  );
-};
-
-const Party = ({ partyName, partyDesignation }) => {
-  return (
-    <li>
-      {partyName}, <em>{partyDesignation}</em>
-    </li>
   );
 };
 
