@@ -2,6 +2,7 @@ import React from 'react';
 import DocketEvents from '@components/docket-events';
 import { useSelector } from 'react-redux';
 import PanelPicker from '@components/panel-picker';
+import Caption from '@components/caption';
 
 const RecordDetails = () => {
   const { number, caption } = useSelector((state) => state.docket);
@@ -9,19 +10,18 @@ const RecordDetails = () => {
   return (
     <>
       <li className="usa-process-list__item">
-        <h4 className="usa-process-list__heading">
+        <h3 className="usa-process-list__heading">
           Select events and documents comprising record
-        </h4>
-        <h3>Docket {number}</h3>
-        <h2>{caption}</h2>
+        </h3>
+        <Caption number={number} caption={caption} />
         <DocketEvents isRecordOnAppeal={true} />
       </li>
       <li className="usa-process-list__item">
-        <h4 className="usa-process-list__heading">Select panel to hear case</h4>
+        <h3 className="usa-process-list__heading">Select panel to hear case</h3>
         <PanelPicker />
       </li>
       <li className="usa-process-list__item">
-        <h4 className="usa-process-list__heading">Send case to panel</h4>
+        <h3 className="usa-process-list__heading">Send case to panel</h3>
         <button
           className="usa-button usa-button--secondary transmit-record"
           onClick={() => alert('transmitted')}

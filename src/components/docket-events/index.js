@@ -1,14 +1,11 @@
 import React from 'react';
-import { navigate } from 'gatsby';
 import DocketTable from '@components/docket-table';
-import { useDispatch } from 'react-redux';
-import { eventAdded } from '@store/docket/docket.slice';
 import AddEventForm from '@components/add-event-form';
 
 const DocketEvents = ({ isRecordOnAppeal }) => {
   return (
     <section>
-      {isRecordOnAppeal ? '' : <h4 id="all_events">Docket</h4>}
+      {isRecordOnAppeal ? '' : <h3 id="all_events">Docket</h3>}
       <p>Select docket entries to include in the Record on Appeal</p>
       <DocketTable isRecordOnAppeal={isRecordOnAppeal} />
       {isRecordOnAppeal ? '' : <AddEventForm />}

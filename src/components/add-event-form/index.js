@@ -45,7 +45,7 @@ const AddEventForm = () => {
     <section>
       <form className="usa-form" onSubmit={handleSubmit}>
         <fieldset className="usa-fieldset">
-          <legend className="usa-legend usa-legend--large">New Event</legend>
+          <legend className="usa-legend">New Event</legend>
           <label htmlFor="event_type" className="usa-label">
             Event type
           </label>

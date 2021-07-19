@@ -5,7 +5,18 @@ import { useSelector } from 'react-redux';
 const DocketTable = ({ isRecordOnAppeal }) => {
   const { events } = useSelector((state) => state.docket);
 
-  if (typeof events === 'undefined' || events.legnth === 0) return '';
+  let headings = [
+    { text: 'Date', sortable: true },
+    { text: 'Description', sortable: true },
+    { text: 'Reference', sortable: true },
+  ];
+
+  const recordHeadings = [
+    { text: 'Include in Record' },
+    { text: 'Seal document' },
+  ];
+
+  headings = isRecordOnAppeal ? [...recordHeadings, ...headings] : headings;
 
   return (
     <>
@@ -13,16 +24,15 @@ const DocketTable = ({ isRecordOnAppeal }) => {
         <table className="usa-table">
           <thead>
             <tr>
-              {isRecordOnAppeal ? <th>Include in Record on Appeal</th> : ''}
-              <th data-sortable scope="col" role="columnheader">
-                Date
-              </th>
-              <th data-sortable scope="col" role="columnheader">
-                Description
-              </th>
-              <th data-sortable scope="col" role="columnheader">
-                Reference
-              </th>
+              {headings.map((h) => (
+                <th
+                  scope="col"
+                  role="columnheader"
+                  {...(h.sortable ? 'data-sortable' : '')}
+                >
+                  {h.text}
+                </th>
+              ))}
             </tr>
           </thead>
           <tbody>

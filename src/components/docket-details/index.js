@@ -3,14 +3,14 @@ import AddParties from '@components/add-parties';
 import DocketEvents from '@components/docket-events';
 import { Link } from 'gatsby';
 import { useSelector } from 'react-redux';
+import Caption from '@components/caption';
 
-const DocketDetails = ({ isRecordOnAppeal }) => {
+const DocketDetails = () => {
   const { number, caption } = useSelector((state) => state.docket);
 
   return (
     <div className="grid-container">
-      <h3>Docket {number}</h3>
-      <h2>{caption}</h2>
+      <Caption {...{ number, caption }} />
       <AddParties />
       <DocketEvents />
       <Link to="/record-on-appeal" className="transmit-record usa-button">

@@ -17,13 +17,13 @@ const AddParties = () => {
 
   return (
     <section className="add-parties">
-      <h4>Parties</h4>
+      <h3>Parties</h3>
 
       {parties && parties.length > 0 ? <PartiesList parties={parties} /> : ''}
 
       <form onSubmit={handleSubmit}>
         <fieldset className="usa-fieldset">
-          <legend className="usa-legend usa-legend--large">Add Parties</legend>
+          <legend className="usa-legend">Add Parties</legend>
           <AddPartiesFields />
           <div className="usa-form-group">
             <input type="submit" className="usa-button" value="Add Party" />

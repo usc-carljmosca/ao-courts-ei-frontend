@@ -1,16 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
+import sampleState from '@store/sample-state';
 
 const docketSlice = createSlice({
   name: 'docket',
-  initialState: {
-    caption: 'US v. Carpenter',
-    number: '21-12345',
-    parties: [
-      { partyName: 'Timothy Carpenter', partyDesignation: 'Defendant' },
-      { partyName: 'United States', partyDesignation: 'Government' },
-    ],
-    events: [],
-  },
+  initialState: sampleState,
 
   reducers: {
     partyAdded: (state, action) => {

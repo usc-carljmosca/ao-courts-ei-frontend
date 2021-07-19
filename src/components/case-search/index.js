@@ -13,7 +13,7 @@ const CaseSearch = ({}) => {
 
   return (
     <section aria-label="Big search component">
-      <h2>Find Cases</h2>
+      <h1>Find Cases</h1>
       <form className="usa-search" role="search" onSubmit={handleSubmit}>
         <label className="usa-sr-only" htmlFor="search-field-en-big">
           Search
