@@ -8,7 +8,9 @@ const RecordTable = ({ events, isRecordOnAppeal }) => {
         <table className="usa-table">
           <thead>
             <tr>
-              <th>Include in Record on Appeal</th>
+              <th scope="col" role="columnheader">
+                Include in Record on Appeal
+              </th>
               <th data-sortable scope="col" role="columnheader">
                 Date
               </th>
