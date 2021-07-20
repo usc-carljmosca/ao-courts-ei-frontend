@@ -3,6 +3,7 @@ import React from 'react';
 import RecordDetails from '@components/record-details';
 import Layout from '@components/layout';
 import SEO from '@components/seo';
+import Caption from '@components/caption';
 
 const RecordOnAppeal = () => {
   return (
@@ -10,6 +11,7 @@ const RecordOnAppeal = () => {
       <SEO title="Record On Appeal" />
 
       <div className="grid-container">
+        <Caption />
         <ol className="usa-process-list">
           <RecordDetails />
         </ol>

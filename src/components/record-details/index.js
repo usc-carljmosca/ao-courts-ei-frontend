@@ -5,15 +5,12 @@ import PanelPicker from '@components/panel-picker';
 import Caption from '@components/caption';
 
 const RecordDetails = () => {
-  const { number, caption } = useSelector((state) => state.docket);
-
   return (
     <>
       <li className="usa-process-list__item">
         <h3 className="usa-process-list__heading">
           Select events and documents comprising record
         </h3>
-        <Caption number={number} caption={caption} />
         <DocketEvents isRecordOnAppeal={true} />
       </li>
       <li className="usa-process-list__item">

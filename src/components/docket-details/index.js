@@ -6,11 +6,9 @@ import { useSelector } from 'react-redux';
 import Caption from '@components/caption';
 
 const DocketDetails = () => {
-  const { number, caption } = useSelector((state) => state.docket);
-
   return (
     <div className="grid-container">
-      <Caption {...{ number, caption }} />
+      <Caption />
       <AddParties />
       <DocketEvents />
       <Link to="/record-on-appeal" className="transmit-record usa-button">
