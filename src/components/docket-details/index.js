@@ -2,7 +2,6 @@ import React from 'react';
 import AddParties from '@components/add-parties';
 import DocketEvents from '@components/docket-events';
 import { Link } from 'gatsby';
-import { useSelector } from 'react-redux';
 import Caption from '@components/caption';
 
 const DocketDetails = () => {
