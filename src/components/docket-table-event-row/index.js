@@ -4,9 +4,10 @@ import Icon from '../icon';
 const DocketEventTableRow = ({ event, isRecordOnAppeal }) => {
   let cells = [
     <DateCell {...event.date} />,
-    <DescriptionCell {...event.description} />,
-    <ReferenceCell {...event.reference} />,
+    <DescriptionCell description={event.description} />,
+    <ReferenceCell reference={event.reference} />,
   ];
+
   const recordControlCells = [<IncludeEventCell />, <SealEventCell />];
 
   cells = isRecordOnAppeal ? [...recordControlCells, ...cells] : cells;
