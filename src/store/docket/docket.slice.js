@@ -25,6 +25,11 @@ const docketSlice = createSlice({
     eventAdded: (state, action) => {
       state.events.push(action.payload.event);
     },
+    deletedAllEvents: (state) => {
+      console.log('Baleeted?');
+      state.events = [];
+      console.log(state);
+    },
   },
   extraReducers: {
     [fetchCaseById.pending]: (state, action) => {
@@ -38,5 +43,5 @@ const docketSlice = createSlice({
   },
 });
 
-export const { eventAdded, partyAdded } = docketSlice.actions;
+export const { eventAdded, partyAdded, deletedAllEvents } = docketSlice.actions;
 export default docketSlice;

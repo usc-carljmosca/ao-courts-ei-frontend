@@ -55,6 +55,10 @@ $theme-hero-image: '#{$theme-image-path}/hero.png';
   padding: 1em 0;
   position: sticky;
   top: 0px;
+
+  .usa-button-group {
+    margin-top: 0.5em;
+  }
 }
 
 /* just for the prototype, please */

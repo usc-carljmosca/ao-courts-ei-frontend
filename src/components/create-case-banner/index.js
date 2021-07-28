@@ -11,12 +11,20 @@ const CreateCaseBanner = () => {
         scratch
         <ul className="usa-button-group">
           <li className="usa-button-group__item">
-            <Link to="" className="usa-button">
+            <Link
+              to="/docket-entry"
+              state={{ fromBanner: true }}
+              className="usa-button"
+            >
               Begin compiling record with existing docket
             </Link>
           </li>
           <li className="usa-button-group__item">
-            <Link to="" className="usa-button usa-button--outline">
+            <Link
+              to="/docket-entry"
+              state={{ fromBanner: true, deleteEvents: true }}
+              className="usa-button usa-button--outline"
+            >
               Do not import data and create docket from scratch
             </Link>
           </li>
