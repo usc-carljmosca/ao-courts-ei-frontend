@@ -2,10 +2,11 @@ import React from 'react';
 import Icon from '../icon';
 
 const DocketEventTableRow = ({ event, isRecordOnAppeal }) => {
+  console.log(event);
   let cells = [
-    <DateCell {...event.date} />,
-    <DescriptionCell description={event.description} />,
-    <ReferenceCell reference={event.reference} />,
+    <DateCell dateFiled={event.dateFiled} />,
+    <DescriptionCell text={event.text} />,
+    <ReferenceCell />,
   ];
 
   const recordControlCells = [<IncludeEventCell />, <SealEventCell />];
@@ -29,13 +30,16 @@ const SealEventCell = () => (
   </td>
 );
 
-const DateCell = ({ month, day, year }) => (
-  <td>
-    {month}/{day}/{year}
-  </td>
-);
+const DateCell = ({ dateFiled }) => <td>{dateFiled}</td>;
 
-const DescriptionCell = ({ description }) => <td>{description}</td>;
-const ReferenceCell = ({ reference }) => <td>{reference}</td>;
+const DescriptionCell = ({ text }) => <td>{text}</td>;
+const ReferenceCell = ({ reference }) => {
+  reference = reference || Math.floor(Math.random() * 200);
+  return (
+    <td>
+      <a href="#">p. {reference}</a>
+    </td>
+  );
+};
 
 export default DocketEventTableRow;

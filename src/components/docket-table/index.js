@@ -39,7 +39,7 @@ const DocketTable = ({ isRecordOnAppeal }) => {
             {events.map((event) => (
               <DocketEventTableRow
                 event={event}
-                key={event.date.month + event.date.day + event.date.year}
+                key={event.dateFiled}
                 isRecordOnAppeal={isRecordOnAppeal}
               />
             ))}
