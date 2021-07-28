@@ -2,8 +2,8 @@ export default {
   caseNumber: '21-12345',
   caption: 'United States v. Timothy Carpenter',
   parties: [
-    { partyName: 'United States', partyDesignation: 'Government' },
-    { partyName: 'Timothy Carpenter', partyDesignation: 'Defendant' },
+    { partyName: 'Robert Burns', partyDesignation: 'Plaintiff' },
+    { partyName: 'Percy Bysshe Shelley', partyDesignation: 'Defendant' },
   ],
   events: [
     {

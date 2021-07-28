@@ -2,7 +2,6 @@ import React from 'react';
 import Icon from '../icon';
 
 const DocketEventTableRow = ({ event, isRecordOnAppeal }) => {
-  console.log(event);
   let cells = [
     <DateCell dateFiled={event.dateFiled} />,
     <DescriptionCell text={event.text} />,

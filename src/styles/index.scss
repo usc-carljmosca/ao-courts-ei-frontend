@@ -46,6 +46,17 @@ $theme-hero-image: '#{$theme-image-path}/hero.png';
   }
 }
 
+.create-case-banner {
+  background: #efefef;
+  box-shadow: 0 4px 2px -2px gray;
+  font-size: size('body', 'md');
+  line-height: line-height('body', 6);
+  min-height: 10vh;
+  padding: 1em 0;
+  position: sticky;
+  top: 0px;
+}
+
 /* just for the prototype, please */
 
 .usa-footer {

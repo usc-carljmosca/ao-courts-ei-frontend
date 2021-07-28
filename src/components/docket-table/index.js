@@ -24,10 +24,11 @@ const DocketTable = ({ isRecordOnAppeal }) => {
         <table className="usa-table">
           <thead>
             <tr>
-              {headings.map((h) => (
+              {headings.map((h, i) => (
                 <th
                   scope="col"
                   role="columnheader"
+                  key={i}
                   {...(h.sortable ? 'data-sortable' : '')}
                 >
                   {h.text}
@@ -36,10 +37,10 @@ const DocketTable = ({ isRecordOnAppeal }) => {
             </tr>
           </thead>
           <tbody>
-            {events.map((event) => (
+            {events.map((event, i) => (
               <DocketEventTableRow
                 event={event}
-                key={event.dateFiled}
+                key={i}
                 isRecordOnAppeal={isRecordOnAppeal}
               />
             ))}

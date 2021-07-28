@@ -7,7 +7,6 @@ export const fetchCaseById = createAsyncThunk(
   'docket/fetchByCaseId',
   async (id) => {
     const response = await API.fetchCaseById(id);
-    console.log(response);
     return response.caseData;
   }
 );
@@ -33,7 +32,7 @@ const docketSlice = createSlice({
     },
     [fetchCaseById.fulfilled]: (state, action) => {
       state.status = 'succeeded';
-      console.log(action.payload);
+      state.caption = action.payload.title;
       state.events = action.payload.docketEntries;
     },
   },
