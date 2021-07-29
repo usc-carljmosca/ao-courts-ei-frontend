@@ -98,20 +98,6 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `blog-posts`,
-        path: `${__dirname}/src/blog-posts`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `documentation-pages`,
-        path: `${__dirname}/src/documentation-pages`,
-      },
-    },
     `gatsby-transformer-remark`,
     {
       resolve: `gatsby-plugin-manifest`,
