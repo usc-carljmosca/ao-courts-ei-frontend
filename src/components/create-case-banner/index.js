@@ -5,10 +5,8 @@ const CreateCaseBanner = () => {
   return (
     <div className="create-case-banner">
       <div className="grid-container">
-        You are viewing the docket for <em>Burns v. Shelley</em>{' '}
-        <span>(21-12345 in the court below)</span>. Would you like to begin
-        compiling the record from this docket or create a new record from
-        scratch
+        Would you like to begin compiling the record from this docket or create
+        a new record from scratch
         <ul className="usa-button-group">
           <li className="usa-button-group__item">
             <Link
@@ -16,7 +14,7 @@ const CreateCaseBanner = () => {
               state={{ fromBanner: true }}
               className="usa-button"
             >
-              Begin compiling record with existing docket
+              Compile record from existing docket
             </Link>
           </li>
           <li className="usa-button-group__item">
@@ -25,7 +23,7 @@ const CreateCaseBanner = () => {
               state={{ fromBanner: true, deleteEvents: true }}
               className="usa-button usa-button--outline"
             >
-              Do not import data and create docket from scratch
+              Create docket from scratch
             </Link>
           </li>
         </ul>

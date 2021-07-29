@@ -36,7 +36,10 @@ const DocketTable = ({ isRecordOnAppeal }) => {
             name="select-all-entries"
             onChange={handleSelectAll}
           />
-          <label class="usa-checkbox__label" for="select-all-entries">
+          <label
+            class="usa-checkbox__label instructions"
+            for="select-all-entries"
+          >
             Include all events in Record
           </label>
         </div>
@@ -50,7 +53,8 @@ const DocketTable = ({ isRecordOnAppeal }) => {
                   scope="col"
                   role="columnheader"
                   key={i}
-                  {...(h.sortable ? 'data-sortable' : '')}
+                  {...(h.sortable && 'data-sortable')}
+                  {...(h.text == 'Description' && { className: 'wide' })}
                 >
                   {h.text}
                 </th>

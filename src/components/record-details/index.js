@@ -20,7 +20,7 @@ const RecordDetails = () => {
       <li className="usa-process-list__item">
         <h3 className="usa-process-list__heading">Send case to panel</h3>
         <button
-          className="usa-button usa-button--secondary transmit-record"
+          className="usa-button usa-button--secondary usa-button--big transmit-record"
           onClick={() => alert('transmitted')}
         >
           Transmit Record

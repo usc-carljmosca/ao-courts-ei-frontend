@@ -10,14 +10,17 @@ const DocketDetails = () => {
       <Caption />
       <div className="compile-docket">
         <h2>Compile Docket</h2>
-        <p>
+        <p className="instructions">
           Review the parties and docket entries here before finalizing the
           Record on Appeal.
         </p>
       </div>
       <AddParties />
       <DocketEvents />
-      <Link to="/record-on-appeal" className="transmit-record usa-button">
+      <Link
+        to="/record-on-appeal"
+        className="transmit-record usa-button usa-button--big"
+      >
         Compile Record on Appeal
       </Link>
     </div>

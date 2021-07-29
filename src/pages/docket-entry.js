@@ -30,7 +30,8 @@ const DocketEntry = ({ location }) => {
       {fromBanner && !deleteEvents && (
         <div className="grid-container">
           <Alert type="info" heading="Docket imported">
-            Ensure the docket is complete before compiling the Record
+            Review the docket to ensure it is complete before compiling the
+            Record
           </Alert>
         </div>
       )}

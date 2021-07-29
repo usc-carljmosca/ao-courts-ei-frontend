@@ -9,7 +9,7 @@ const DocketEvents = ({ isRecordOnAppeal }) => {
       {!isRecordOnAppeal && (
         <>
           <h3 id="all_events">Docket</h3>
-          <p>
+          <p className="instructions">
             Ensure the docket is complete here.{' '}
             <Link to="#add-event-form">Add any missing entries</Link> below.
           </p>
