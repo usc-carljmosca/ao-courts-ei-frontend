@@ -20,19 +20,17 @@ const docketSlice = createSlice({
       state.caption = action.caption;
     },
     partyAdded: (state, action) => {
-      state.parties.push(action.party);
+      state.parties.push(action.payload.party);
     },
     eventAdded: (state, action) => {
       state.events.push(action.payload.event);
     },
     deletedAllEvents: (state) => {
-      console.log('Baleeted?');
       state.events = [];
-      console.log(state);
     },
   },
   extraReducers: {
-    [fetchCaseById.pending]: (state, action) => {
+    [fetchCaseById.pending]: (state) => {
       state.status = 'loading';
     },
     [fetchCaseById.fulfilled]: (state, action) => {

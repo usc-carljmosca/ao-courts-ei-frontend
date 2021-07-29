@@ -12,6 +12,7 @@ const AddParties = () => {
     const data = new FormData(e.target);
     const partyName = data.get('party');
     const partyDesignation = data.get('party-designation');
+    console.log(partyName);
     dispatch(partyAdded({ party: { partyName, partyDesignation } }));
   };
 
@@ -19,7 +20,7 @@ const AddParties = () => {
     <section className="add-parties">
       <h3>Parties</h3>
 
-      {parties && parties.length > 0 ? <PartiesList parties={parties} /> : ''}
+      {parties && parties.length > 0 && <PartiesList parties={parties} />}
 
       <form onSubmit={handleSubmit}>
         <fieldset className="usa-fieldset">

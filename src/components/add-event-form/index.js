@@ -20,9 +20,9 @@ const AddEventForm = () => {
     dispatch(
       eventAdded({
         event: {
-          type: eventType,
-          description,
-          date: { day, month, year },
+          entryType: eventType,
+          text: description,
+          dateFiled: `${year}-${month}-${day}`,
           reference,
         },
       })
