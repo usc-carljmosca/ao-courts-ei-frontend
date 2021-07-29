@@ -18,8 +18,29 @@ const DocketTable = ({ isRecordOnAppeal }) => {
 
   headings = isRecordOnAppeal ? [...recordHeadings, ...headings] : headings;
 
+  const handleSelectAll = () => {
+    const checkboxes = document.querySelectorAll(
+      '#docket_table input[type=checkbox]'
+    );
+    Array.from(checkboxes).map((b) => b.setAttribute('checked', true));
+  };
+
   return (
     <>
+      {isRecordOnAppeal && (
+        <div class="usa-checkbox">
+          <input
+            class="usa-checkbox__input"
+            id="select-all-entries"
+            type="checkbox"
+            name="select-all-entries"
+            onChange={handleSelectAll}
+          />
+          <label class="usa-checkbox__label" for="select-all-entries">
+            Include all events in Record
+          </label>
+        </div>
+      )}
       <div className="usa-table-container" id="docket_table">
         <table className="usa-table">
           <thead>
