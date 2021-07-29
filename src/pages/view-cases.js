@@ -12,8 +12,8 @@ const ViewCases = () => (
     <div className="grid-container">
       <Alert type="info" heading="Notice of Appeal Filed">
         A notice of appeal has been filed in{' '}
-        <Link to="/docket-entry/">
-          <em>United States v. Carpenter</em>
+        <Link to="/review-incoming-case">
+          <em>Burns v. Shelley</em>
         </Link>
       </Alert>
       <CaseSearch />

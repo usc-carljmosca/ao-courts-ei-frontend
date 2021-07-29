@@ -12,6 +12,7 @@ const RecordOnAppeal = () => {
 
       <div className="grid-container">
         <Caption />
+        <h2>Compile Record on Appeal</h2>
         <ol className="usa-process-list">
           <RecordDetails />
         </ol>

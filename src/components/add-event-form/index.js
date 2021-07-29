@@ -43,31 +43,35 @@ const AddEventForm = () => {
 
   return (
     <section>
-      <form className="usa-form" onSubmit={handleSubmit}>
+      <form className="usa-form" id="add-event-form" onSubmit={handleSubmit}>
         <fieldset className="usa-fieldset">
           <legend className="usa-legend">New Event</legend>
-          <label htmlFor="event_type" className="usa-label">
-            Event type
-          </label>
-          <select name="event_type" id="event_type" className="usa-select">
-            <option>- Select an event type-</option>
-            {eventTypes.map((t) => (
-              <option value={t} key={t}>
-                {t}
-              </option>
-            ))}
-          </select>
+          <div className="usa-form-group">
+            <label htmlFor="event_type" className="usa-label">
+              Event type
+            </label>
+            <select name="event_type" id="event_type" className="usa-select">
+              <option>- Select an event type-</option>
+              {eventTypes.map((t) => (
+                <option value={t} key={t}>
+                  {t}
+                </option>
+              ))}
+            </select>
+          </div>
 
           <DocketEventDate />
 
-          <label htmlFor="event_details" className="usa-label">
-            Event Details
-          </label>
-          <textarea
-            name="event_details"
-            id="event_details"
-            className="usa-textarea"
-          ></textarea>
+          <div className="usa-form-group">
+            <label htmlFor="event_details" className="usa-label">
+              Event Details
+            </label>
+            <textarea
+              name="event_details"
+              id="event_details"
+              className="usa-textarea"
+            ></textarea>
+          </div>
 
           <div className="usa-form-group">
             <label className="usa-label" htmlFor="file-input-single">

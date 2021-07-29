@@ -5,10 +5,12 @@ const Caption = () => {
   const { number, caption } = useSelector((state) => state.docket);
 
   return (
-    <>
+    <div className="caption">
       <h1>{caption}</h1>
-      <h2>{number}</h2>
-    </>
+      <div classNamk="docket-number">
+        {number || '21-12345' /* API doesn't currently have a docket number */}
+      </div>
+    </div>
   );
 };
 
