@@ -1,10 +1,9 @@
 import React from 'react';
 import DocketEvents from '@components/docket-events';
-import { useSelector } from 'react-redux';
 import PanelPicker from '@components/panel-picker';
-import Caption from '@components/caption';
+import CourtPicker from '@components/court-picker';
 
-const RecordDetails = () => {
+const RecordDetails = ({ isAppellate }) => {
   return (
     <>
       <li className="usa-process-list__item">
@@ -14,11 +13,26 @@ const RecordDetails = () => {
         <DocketEvents isRecordOnAppeal={true} />
       </li>
       <li className="usa-process-list__item">
-        <h3 className="usa-process-list__heading">Select panel to hear case</h3>
-        <PanelPicker />
+        {isAppellate ? (
+          <>
+            <h3 className="usa-process-list__heading">
+              Select panel to hear case
+            </h3>
+            <PanelPicker />
+          </>
+        ) : (
+          <>
+            <h3 className="usa-process-list__heading">
+              Select court to receive case
+            </h3>
+            <CourtPicker />
+          </>
+        )}
       </li>
       <li className="usa-process-list__item">
-        <h3 className="usa-process-list__heading">Send case to panel</h3>
+        <h3 className="usa-process-list__heading">
+          Send case to {isAppellate ? 'panel' : 'court'}
+        </h3>
         <button
           className="usa-button usa-button--secondary usa-button--big transmit-record"
           onClick={() => alert('transmitted')}

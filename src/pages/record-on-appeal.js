@@ -5,7 +5,7 @@ import Layout from '@components/layout';
 import SEO from '@components/seo';
 import Caption from '@components/caption';
 
-const RecordOnAppeal = () => {
+const RecordOnAppeal = ({ isAppellate }) => {
   return (
     <Layout>
       <SEO title="Record On Appeal" />
@@ -14,7 +14,7 @@ const RecordOnAppeal = () => {
         <Caption />
         <h2>Compile Record on Appeal</h2>
         <ol className="usa-process-list">
-          <RecordDetails />
+          <RecordDetails isAppellate={isAppellate} />
         </ol>
       </div>
     </Layout>

@@ -1,21 +1,23 @@
 import React from 'react';
-import Caption from '@components/caption';
-import DocketTable from '@components/docket-table';
-import CreateCaseBanner from '@components/create-case-banner';
+import RecordDetails from '@components/record-details';
 import Layout from '@components/layout';
 import SEO from '@components/seo';
+import Caption from '@components/caption';
 
-const DocketEntry = () => {
+const RecordOnAppeal = () => {
   return (
     <Layout>
-      <SEO title="Docket Entry" />
-      <CreateCaseBanner />
+      <SEO title="Record On Appeal" />
+
       <div className="grid-container">
         <Caption />
-        <DocketTable />
+        <h2>Compile Record on Appeal</h2>
+        <ol className="usa-process-list">
+          <RecordDetails isAppellate={true} />
+        </ol>
       </div>
     </Layout>
   );
 };
 
-export default DocketEntry;
+export default RecordOnAppeal;
