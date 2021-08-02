@@ -5,7 +5,9 @@ import Layout from '@components/layout';
 import SEO from '@components/seo';
 import Caption from '@components/caption';
 
-const RecordOnAppeal = ({ isAppellate }) => {
+const RecordOnAppeal = ({ location }) => {
+  const isAppellate = location.state && location.state.isAppellate;
+
   return (
     <Layout>
       <SEO title="Record On Appeal" />

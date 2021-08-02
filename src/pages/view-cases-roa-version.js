@@ -12,7 +12,7 @@ const ViewCases = () => (
     <div className="grid-container">
       <Alert type="info" heading="New Record on Appeal available to view">
         The Record on Appeal for{' '}
-        <Link to="/review-incoming-case/">
+        <Link to="/record-on-appeal" state={{ isAppellate: true }}>
           <em>Burns v. Shelley</em>
         </Link>{' '}
         is now available to view.
